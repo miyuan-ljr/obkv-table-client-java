@@ -40,6 +40,22 @@ public class ObTableSingleOpEntity extends AbstractPayload {
     private List<String> aggPropertiesNames = new ArrayList<>();
     private List<ObObj> propertiesValues = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        String text = "\n";
+        text += "ObTableSingleOpEntity:";
+        text += "propertiesNames:";
+        for (String op : propertiesNames) {
+            text += op;
+        }
+        text += "propertiesValues:";
+        for (ObObj op : propertiesValues) {
+            text += op.toString();
+        }
+        text += "\n";
+        return text;
+    }
+
     private boolean ignoreEncodePropertiesColumnNames = false;
 
     public ObTableSingleOpEntity() {}

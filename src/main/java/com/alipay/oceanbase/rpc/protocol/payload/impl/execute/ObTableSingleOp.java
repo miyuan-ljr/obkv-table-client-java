@@ -34,6 +34,15 @@ public class ObTableSingleOp extends AbstractPayload {
     private ObTableSingleOpQuery query = new ObTableSingleOpQuery();
     private List<ObTableSingleOpEntity> entities = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        String text = "ObTableSingleOp:";
+        for (ObTableSingleOpEntity op : entities) {
+            text += op.toString();
+        }
+        return text;
+    }
+
     /*
      * Encode.
      */

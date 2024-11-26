@@ -29,6 +29,15 @@ public class ObTableLSOperation extends AbstractPayload {
     private List<ObTableTabletOp> tabletOperations = new ArrayList<ObTableTabletOp>();
     private long                  lsId             = INVALID_LS_ID;                   // i64
 
+    @Override
+    public String toString() {
+        String text = "ObTableLSOperation:";
+        for (ObTableTabletOp op : tabletOperations) {
+            text += op.toString();
+        }
+        return text;
+    }
+
     private String tableName;
 
     private long tableId = Constants.OB_INVALID_ID;;

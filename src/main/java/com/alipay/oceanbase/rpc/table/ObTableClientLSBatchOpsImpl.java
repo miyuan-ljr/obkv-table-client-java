@@ -536,6 +536,9 @@ public class ObTableClientLSBatchOpsImpl extends AbstractTableBatchOps {
                         throw ex;
                     }
                 } else {
+                    String log_txt = tableLsOpRequest.toString();
+                    System.out.println(log_txt);
+                    logger.error(LCD.convert("01-00002"), log_txt);
                     obTableClient.calculateContinuousFailure(tableName, ex.getMessage());
                     throw ex;
                 }

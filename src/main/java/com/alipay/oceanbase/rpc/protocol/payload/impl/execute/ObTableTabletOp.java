@@ -35,6 +35,15 @@ public class ObTableTabletOp extends AbstractPayload {
     private List<ObTableSingleOp> singleOperations = new ArrayList<>();
     private long tabletId = Constants.INVALID_TABLET_ID; // i64
 
+    @Override
+    public String toString() {
+        String text = "ObTableTabletOp:";
+        for (ObTableSingleOp op : singleOperations) {
+            text += op.toString();
+        }
+        return text;
+    }
+
     private Set<String> rowKeyNamesSet = new LinkedHashSet<>();
     private Set<String> propertiesNamesSet = new LinkedHashSet<>();
     ObTableTabletOpFlag optionFlag = new ObTableTabletOpFlag();

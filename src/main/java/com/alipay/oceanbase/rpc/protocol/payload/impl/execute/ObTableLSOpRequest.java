@@ -40,6 +40,11 @@ public class ObTableLSOpRequest extends AbstractPayload implements Credentialabl
     protected ObTableConsistencyLevel consistencyLevel = ObTableConsistencyLevel.STRONG;
     private ObTableLSOperation        lsOperation      = null;
 
+    @Override
+    public String toString() {
+        return lsOperation.toString();
+    }
+
     /*
      * Get pcode.
      */
