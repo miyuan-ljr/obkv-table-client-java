@@ -648,6 +648,7 @@ public class ObTableClientLSBatchOpsImpl extends AbstractTableBatchOps {
                         allPartitionsSuccess = false;
                         break;
                     } else {
+                        System.out.println("operation execute retry count: " + retryCount);
                         throw e;
                     }
                 }
